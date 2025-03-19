@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="boton1">Añadir párrafo</button>
+    <button id="boton2">Añadir párrafo2</button>
+
+    <div id="miDiv"></div>
+
+    <script>
+        addEventListener('load', iniciar, false);
+
+        function iniciar() {
+            document.getElementById('boton1').addEventListener('click', anadirParrafo1 ,false);
+            document.getElementById('boton2').addEventListener('click', anadirParrafo2 ,false);
+
+
+        }
+
+        var contador = 0;
+        function anadirParrafo1(){
+            var parrafo = document.createElement('p');
+            var miDiv = document.getElementById('miDiv');
+            parrafo.innerHTML = "Párrafo "+contador;
+
+            miDiv.appendChild(parrafo);
+            contador++;
+        }
+
+        function anadirParrafo2(){
+            var miDiv = document.getElementById('miDiv');
+            miDiv.innerHTML += "<p>Párrafo creado con innerHTML "+contador+"</p>";
+            contador++;
+        }
+
+
+
+
+
+    </script>      
+</body>
+</html>

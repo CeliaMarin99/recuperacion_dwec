@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="">Provincias:</label>
+    <select name="" id="provincias">
+        
+    </select>
+
+    <button id="poblar">Poblar</button>
+
+    <script>
+        addEventListener('load', iniciar);
+
+        const select = document.getElementById('provincias');
+
+        function iniciar() {
+            document.getElementById('poblar').addEventListener('click', poblar);
+            select.addEventListener('change', mostrarProvincia);
+            
+        }
+
+        function poblar(){
+            var provincias = ['Sevilla', 'Cádiz', 'Huelva', 'Córdoba', 'Málaga', 'Granada', 'Almería', 'Jaén'];
+           
+            for(var i=0; i<provincias.length; i++){
+               select.insertAdjacentHTML('beforeend', '<option value= "'+provincias[i]+'">' + provincias[i] + '</option>');
+            }
+        }
+
+        function mostrarProvincia(){
+            var provincia = select.value;
+            alert(provincia);
+        }
+    </script>
+</body>
+</html>

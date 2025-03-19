@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modificación del tamaño del texto</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ex cumque voluptas tempora ipsa provident tenetur laborum nobis minima eos quam non animi dolor perspiciatis quae commodi, praesentium nulla doloribus!</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, corrupti. Temporibus optio iste reiciendis possimus corporis. Tempora, saepe dolores ipsa, enim perferendis, ullam tenetur officia aspernatur iusto quia voluptatibus praesentium?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsam eum vero ex maiores optio, quas molestias, natus laboriosam, at veritatis aspernatur illo est. Libero eum repellat adipisci incidunt aliquid!</p>
+
+    <label for="">Seleccionar tamaño:</label>
+    <select name="" id="tamano">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select>
+
+    <script>
+        addEventListener('load', iniciar, false);
+
+        function iniciar() {
+            document.getElementById('tamano').addEventListener('change', cambiarTamano, false);
+        }
+
+        function cambiarTamano(){
+
+            //Guardar el valor del tamaño seleccionado
+            var tamano = document.getElementById('tamano').value;
+            //Seleccionar todos los párrafos en un array de parrafos
+            var parrafos = document.getElementsByTagName('p');
+
+            //Recorrrer el array de parrafos y cambiar el tamaño de la fuente
+            for(var i = 0; i < parrafos.length; i++){
+                parrafos[i].style.fontSize = tamano;
+            }
+        }
+    </script>
+</body>
+</html>

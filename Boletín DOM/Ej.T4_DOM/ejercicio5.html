@@ -1,0 +1,41 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+<meta charset="utf-8"/>    
+<title>DOM</title>    
+</head>    
+<body>    
+    
+    <p></p>    
+    <p></p>    
+    <p></p>    
+    <p></p>    
+
+    <label>Color del párrafo</label><input type="text" id="txtColor" value="blue" /></br>    
+
+    <input type="button" onclick="anadirParrafo();" value="Añadir párrafos"/>    
+
+<script>    
+   //Primero inicializar el contador a 0
+    var contador = 0;  
+
+    function anadirParrafo(){
+         
+        //Seleccionar todos los párrafos en un array de parrafos
+        var parrafo = document.getElementsByTagName('p');
+        //Seleccionar el párrafo con el contador y añadirle un texto
+        parrafo[contador].innerHTML = "Párrafo "+contador;
+
+        //Obtener el color del input
+        var color = document.getElementById('txtColor').value;
+
+        //Cambiar el color del párrafo
+        parrafo[contador].style.color = color;
+
+        //Incrementar el contador para que el siguiente párrafo sea el siguiente
+        contador++;
+
+            }    
+    </script>   
+</body>    
+</html>  

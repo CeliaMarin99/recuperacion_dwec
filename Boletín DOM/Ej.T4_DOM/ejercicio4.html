@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modificación del tamaño del texto</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ex cumque voluptas tempora ipsa provident tenetur laborum nobis minima eos quam non animi dolor perspiciatis quae commodi, praesentium nulla doloribus!</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, corrupti. Temporibus optio iste reiciendis possimus corporis. Tempora, saepe dolores ipsa, enim perferendis, ullam tenetur officia aspernatur iusto quia voluptatibus praesentium?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsam eum vero ex maiores optio, quas molestias, natus laboriosam, at veritatis aspernatur illo est. Libero eum repellat adipisci incidunt aliquid!</p>
+
+    <label for="">Seleccionar:</label>
+    visibilidad <input type="checkbox" id="visibilidad">
+
+    <select name="" id="posicion">
+        <option value="inline">inline</option>
+        <option value="none">none</option>
+    </select>
+
+
+    <script>
+        addEventListener('load', iniciar, false);
+
+        function iniciar() {
+            document.getElementById('visibilidad').addEventListener('click', cambiarVisibilidad, false);
+            document.getElementById('posicion').addEventListener('change', cambiarPosicion, false);
+        }
+        
+        function cambiarVisibilidad(){
+            var parrafos = document.getElementsByTagName('p');
+
+            for(var i = 0; i < parrafos.length; i++){
+                if(parrafos[1].style.visibility == 'hidden'){
+
+                    parrafos[1].style.visibility =  'visible';
+                }else{
+                    parrafos[1].style.visibility =  'hidden';
+                }
+                   
+            }
+        }
+
+        function cambiarPosicion(){
+            var posicion = document.getElementById('posicion').value;
+
+            var parrafos = document.getElementsByTagName('p');
+
+            for(var i = 0; i < parrafos.length; i++){
+                parrafos[1].style.display = posicion;
+            }
+        }
+    </script>
+</body>
+</html>

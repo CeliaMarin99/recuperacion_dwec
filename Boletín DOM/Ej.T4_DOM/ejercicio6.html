@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Nuevo Texto:</label>
+    <input type="text" id="texto">
+
+    <button id="boton1">Añadir elto con insertAdjacement</button>
+    <br>
+    <button id="boton2">Añadir elto con CreateElement</button>
+
+    <div id="miDiv"></div>
+
+    <script>
+        addEventListener('load', iniciar, false);
+
+        const div = document.getElementById('miDiv');
+
+        function iniciar() {
+            document.getElementById('boton1').addEventListener('click', insertAdjacement, false);
+            document.getElementById('boton2').addEventListener('click', createElement, false);
+        }
+
+        function createElement() {
+            var titulo = document.createElement('h1');
+            titulo.innerHTML = document.getElementById('texto').value;
+            div.appendChild(titulo);
+        }
+
+        function insertAdjacement() {
+           
+            var texto = document.getElementById('texto').value;
+            div.insertAdjacentHTML('beforeend', texto);
+        }
+    </script>
+
+</body>
+</html>
