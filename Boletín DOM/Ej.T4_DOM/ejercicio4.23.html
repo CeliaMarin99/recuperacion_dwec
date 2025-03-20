@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="texto">Texto:</label>
+    <input type="text" id="texto">
+    <button id="insertar">Insertar nuevo Texto</button>
+
+    <div id="miDiv"></div>
+
+    <script>
+        // Ejecutamos la función iniciar cuando la página esté cargada
+        window.addEventListener('load', iniciar);
+
+        const miDiv = document.getElementById('miDiv');
+
+        function iniciar() {
+            document.getElementById('insertar').addEventListener('click', insertar);
+        }
+
+        var contador = 0;
+
+        function insertar() {
+            var texto = document.getElementById('texto').value;
+
+            // Insertamos el nuevo párrafo con un botón que llama a la función copiar
+            miDiv.insertAdjacentHTML('beforeend', `
+                <p id="p${contador}">
+                    ${texto} 
+                    <button id="btn${contador}" onclick="copiar(${contador})">Copiar encima</button> 
+                     <button id="btn${contador}" onclick="borrar(${contador})">Borrar</button>
+                     <button id="btn${contador}" onclick="actualizar(${contador})">Actualizar</button>
+
+
+                </p>
+            `);
+
+            contador++;
+        }
+
+        function copiar(id) {
+            var parrafo = document.getElementById('p' + id);
+            var parrafoClon = parrafo.cloneNode(true);
+            miDiv.insertBefore(parrafoClon, parrafo);
+        }
+
+        function borrar(id){
+            var parrafo = document.getElementById('p' + id);
+            parrafo.remove();
+        }
+
+        
+        function actualizar(id){
+            var parrafo = document.getElementById('p' + id);
+            var texto = document.getElementById('texto').value;
+            parrafo.innerHTML = texto+ ` <button id="btn${id}" onclick='copiar(${id})'>Copiar encima</button> <button id='btn${id}' onclick='borrar(${id})'>Borrar</button><button id='btn${id}' onclick='actualizar(${id})'>Actualizar</button>`;
+        }
+    </script>
+</body>
+</html>

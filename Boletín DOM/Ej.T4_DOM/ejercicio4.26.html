@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+<html>  
+<body>  
+  
+<h2 class="example">A heading with class="example"</h2>  
+<p class="example">A paragraph with class="example".</p>   
+  
+<p>Click the button to add a background color to the first p element in the document with class="example".</p>  
+  
+<button onclick="myFunction()">Try it</button>  
+  
+<script>  
+function myFunction() {  
+   // Obtener todos los elementos <p> con la clase 'example'
+    var primerElto = document.querySelector('.example');
+  
+  // Establecer el estilo de fondo
+  primerElto.style.backgroundColor = 'blue';
+}
+</script>  
+  
+</body>  
+</html> 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modificación del tamaño del texto</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ex cumque voluptas tempora ipsa provident tenetur laborum nobis minima eos quam non animi dolor perspiciatis quae commodi, praesentium nulla doloribus!</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, corrupti. Temporibus optio iste reiciendis possimus corporis. Tempora, saepe dolores ipsa, enim perferendis, ullam tenetur officia aspernatur iusto quia voluptatibus praesentium?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsam eum vero ex maiores optio, quas molestias, natus laboriosam, at veritatis aspernatur illo est. Libero eum repellat adipisci incidunt aliquid!</p>
+
+    <label for="color">Seleccionar color:</label>
+    <select name="" id="color">
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="blue">Azul</option>
+    </select>
+
+    <script>
+        // Asignar un event listener cuando la página esté completamente cargada
+        addEventListener('load', iniciar, false);
+
+        function iniciar() {
+            // Agregar el evento de cambio al selector de color
+            document.getElementById('color').addEventListener('change', cambiarColor, false);
+        }
+
+        function cambiarColor() {
+            // Obtener el valor del color seleccionado
+            var color = document.getElementById('color').value;
+            // Seleccionar todos los párrafos en un array de parrafos
+            var parrafos = document.getElementsByTagName('p');
+
+            // Recorrer el array de párrafos y cambiar el color de la fuente
+            for (var i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = color;
+            }
+        }
+    </script>
+</body>
+</html>

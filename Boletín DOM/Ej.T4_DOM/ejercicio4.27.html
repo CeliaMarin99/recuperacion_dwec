@@ -11,8 +11,11 @@
   
 <script>  
 function myFunction() {  
-  var parrafo = document.getElementsByClassName("example")[1];
-  parrafo.querySelector('example').setAttribute('style', 'color: blue;');
+   // Obtener todos los elementos <p> con la clase 'example'
+    var parrafo = document.querySelector('p.example');
+  
+  // Establecer el estilo de fondo
+  parrafo.style.backgroundColor = 'blue';
 }
 </script>  
   
