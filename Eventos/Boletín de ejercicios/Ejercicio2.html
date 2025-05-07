@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="formulario">
+        <label for="">Nombre:</label>
+        <input type="text" id="nombre"> 
+        <p id="parrafo">Hola </p>
+    </form>
+
+    <script>
+        addEventListener('load', iniciar);
+
+        function iniciar(){
+            document.getElementById('nombre').addEventListener('keyup', Escribir);
+        }
+
+        function Escribir(){
+            var form = document.getElementById('formulario');
+            var input = document.getElementById('nombre').value;
+            parrafo.innerHTML = "Hola "+ input;
+            form.appendChild(parrafo);
+        }
+    </script>
+</body>
+</html>

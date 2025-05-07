@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Crear un formulario con 2 botones-->
+    <form action="">
+        <input type="submit" id="boton1" value="boton1">
+        <input type="submit" id="boton2" value="boton2">
+    </form>
+
+    <div id="div1"></div>
+
+    <div id="div2"></div>
+
+    <script>
+        addEventListener("load", iniciar);
+
+        function iniciar(){
+            document.getElementById("boton1").addEventListener("click", Escribir1);
+            document.getElementById("boton2").addEventListener("click", Escribir2);
+
+            document.getElementById("div1").addEventListener("mouseover", Colorear1);
+            document.getElementById("div2").addEventListener("mouseover", Colorear2);
+
+        }
+
+        function Escribir1(event){
+            event.preventDefault();  // Prevenir el envío del formulario
+            var div = document.getElementById("div1");
+            var parrafo = document.createElement('p');
+            parrafo.innerHTML = "Hola desde el div1";
+            div.appendChild(parrafo);
+        }
+
+        
+        function Escribir2(event){
+            event.preventDefault();  // Prevenir el envío del formulario
+            var div = document.getElementById("div2");
+            var parrafo = document.createElement('p');
+            parrafo.innerHTML = "Hola desde el div2";
+            div.appendChild(parrafo);
+        }
+
+        function Colorear1(){
+            var div = document.getElementById("div1");
+            div.style.backgroundColor = "pink";
+        }
+
+        function Colorear2(){
+            var div = document.getElementById("div2");
+            div.style.backgroundColor = "green";
+        }
+    </script>
+</body>
+</html>

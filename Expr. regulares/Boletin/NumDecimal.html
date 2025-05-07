@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function  validaNumeroDecimal(num){
+            var patron = /^[+-]?\d+\,\d+$/;
+
+            return patron.test(num);
+        }
+
+        console.log(validaNumeroDecimal("1,22"));//true
+        console.log(validaNumeroDecimal("+3421,2298"));//true
+        console.log(validaNumeroDecimal("-3"));//false
+
+
+
+    </script>
+</body>
+</html>

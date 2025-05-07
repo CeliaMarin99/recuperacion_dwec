@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Localidad</title>
+</head>
+<body>
+
+    <form>
+        <label for="localidad">Selecciona una localidad:</label>
+        <select id="localidad" name="localidad" onchange="mostrarLocalidad()">
+            <option value="Utrera">Utrera</option>
+            <option value="Los Palacios">Los Palacios</option>
+            <option value="Dos Hermanas">Dos Hermanas</option>
+        </select>
+        <p id="resultado"></p>
+    </form>
+
+    <script>
+        function mostrarLocalidad() {
+            // Obtener el valor seleccionado del dropdown
+            var localidadSeleccionada = document.getElementById('localidad').value;
+            
+            // Mostrar el resultado en el párrafo con el id "resultado"
+            document.getElementById('resultado').textContent = "Has seleccionado: " + localidadSeleccionada;
+        }
+    </script>
+
+</body>
+</html>

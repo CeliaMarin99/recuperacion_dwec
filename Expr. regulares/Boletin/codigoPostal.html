@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validaCodigoPostal(codigo){
+            //41710
+            var patron = /^\d{5}$/;
+
+            if(patron.test(codigo)){
+                console.log("Es correcto");
+            }else{
+                console.log("No es correcto");
+            }
+        }
+
+        validaCodigoPostal("41710");//true
+
+        validaCodigoPostal("abcdf");//false
+        validaCodigoPostal("22222222");//false
+
+        function extraeCPs(frase){
+            var patron = /\b\d{5}\b/g;
+
+            //\b evita que encuentre en números más largos
+
+            return frase.match(patron) || []; // Evita que devuelva null;
+             
+        }
+
+        console.log(extraeCPs("El cp de mi provincia no es 123456 es 12345 y el de mi pueblo no es abcde es 41710"));
+
+        function sustituyeCPs(frase){
+            var patron = /\b\d{5}\b/g;
+
+            return frase.replace(patron, "C.P");
+        }
+
+        console.log(sustituyeCPs("El cp de mi provincia no es 123456 es 12345 y el de mi pueblo no es abcde es 41710"));
+    </script>
+</body>
+</html>

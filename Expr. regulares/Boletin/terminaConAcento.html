@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function terminaVocalAcentuada(palabra){
+            var patron = /\b[a-z]+[áéíóú]\b/i; 
+
+            return patron.test(palabra);
+        }
+
+        console.log(terminaVocalAcentuada("Avión"));//true
+        console.log(terminaVocalAcentuada("Aguacate"));//false
+        console.log(terminaVocalAcentuada("Sería"));//false
+
+
+
+    </script>
+</body>
+</html>

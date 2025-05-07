@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="miFormulario">
+        <label for="localidad">Localidad:</label>
+        <select id="localidad" name="localidad">
+            <option value="Utrera" id="pueblo">Utrera</option>
+            <option value="Los Palacios">Los Palacios</option>
+            <option value="El Palmar">El Palmar</option>
+        </select>
+        <p id="parrafo"></p>
+    </form>
+
+    <script>
+        addEventListener('load', iniciar);
+
+        function iniciar(){
+            document.getElementById('localidad').addEventListener('input', Escribir);
+        }
+
+        function Escribir(){
+            var pueblo = document.getElementById('localidad').value;
+            parrafo.innerHTML = "Localidad seleccionada: "+ pueblo;
+
+            document.getElementById('miFormulario').appendChild(parrafo);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+         let patron = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+        /*
+        ^ → Inicio de la cadena.
+        (?=.*[A-Z]) → Al menos una mayúscula.
+        (?=.*[a-z]) → Al menos una minúscula.
+        (?=.*\d) → Al menos un número (0-9).
+        (?=.*[!@#$%^&*]) → Al menos un carácter especial de la lista !@#$%^&*.
+        [A-Za-z\d!@#$%^&*]{8,} → Solo permite letras, números y los caracteres especiales definidos, con un mínimo de 8 caracteres.
+        $ → Fin de la cadena.
+        */
+    </script>
+   
+</body>
+</html>

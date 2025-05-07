@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*Realiza el patron de un número de teléfono que pueda ser:
+        - +34 600 635 258
+        - 600635258
+        - +1-600-635-258
+        */
+        let patron = /^(\+\d{1,3})?[-\s]?\d{3}[\-\s]?\d{3}[\-\s]?\d{3}$/;
+
+        /*
+        ^->Que empieze por
+        (\+\d{1,3})?-> signo + y de uno a tres dígitos cualquiera, opcional.
+        [-\s]? → separador opcional de guion o espacio.
+        \d{3}->Tres dígitos cualquiera.
+        [-\s]?->Puede haber un espacio o guión
+        \d{3} → Segundo bloque de 3 números.
+        [-\s]? → Otro separador opcional.
+        \d{3} → Último bloque de 3 números.
+        $ → Fin de la cadena.
+        */
+       
+        //Numeros válidos
+        var telefono1 = "+34 600 635 258";
+        var telefono2 = "600635258";
+        var telefono3 = "+1-600-635-258";
+        console.log(patron.test(telefono1));//true
+        console.log(patron.test(telefono2));//true
+        console.log(patron.test(telefono3));//true
+
+        //Numeros inválidos
+        var telefono4 = "+34600635 ";
+        var telefono5 = "600635255555";
+        var telefono6 = "+1-600-635-abc";
+        console.log(patron.test(telefono4));//false
+        console.log(patron.test(telefono5));//false
+        console.log(patron.test(telefono6));//false
+
+    </script>
+</body>
+</html>

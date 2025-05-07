@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let patron = /[\w.-]+@\w+\.(com|net|org|es)/g;
+
+        /*
+        Para buscar dentro de un texto no poner ^ o $, añadir g.
+        [\w.-]+ → Nombre de usuario: puede contener letras, números, puntos (.) o guiones (-).
+        @ → El símbolo obligatorio de correo.
+        \w+ → Nombre del dominio (gmail, outlook, yahoo, etc.).
+        \. → El punto (.) antes del TLD (.com, .net, etc.).
+        (com|net|org|es) → Soporta múltiples dominios comunes.
+        g → Para buscar todos los correos en un texto, no solo la primera coincidencia.
+        */
+
+        const texto = "Mis correos son juan@gmail.com y maria123@outlook.com";
+        console.log(texto.match(patron)); 
+    </script>
+</body>
+</html>
