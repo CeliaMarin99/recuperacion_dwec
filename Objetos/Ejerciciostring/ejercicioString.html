@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+<script>
+
+//Ejercicio 1
+
+let ej1_nombre = "Celia Marín Álvarez";
+		let ej1_numeroCaracteres = ej1_nombre.length;
+		console.log(`Número caracteres nombre completo:${ej1_numeroCaracteres}`)
+//Ejercicio 2
+let ej2_nombre = "Celia Marín Álvarez";
+		for (let i = 0; i < ej2_nombre.length; i++) {
+			console.log(ej2_nombre.charAt(i));
+        }
+
+//Ejercicio 3
+let ej3Nombre = "Celia Marín Álvarez";
+console.log(ej3Nombre.toUpperCase());
+console.log(ej3Nombre.toLowerCase());
+
+//Ejercicio 4
+let ejercicio4 = "En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+console.log(ejercicio4.indexOf("Mancha"));
+console.log(ejercicio4.indexOf("Quijote"));
+console.log(ejercicio4.indexOf("de"));
+
+//Ejercicio 5
+let ejercicio5 ="En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+console.log(ejercicio5.substring(4,9));
+
+//Ejercicio 6
+let ejercicio6="En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+console.log(ejercicio6.includes("cuyo"));
+console.log(ejercicio6.includes("lugar",12));
+//Ejercicio 7
+let ejercicio7="En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+console.log(ejercicio7.endsWith("acordarme"));
+console.log(ejercicio7.endsWith("Hidalgo"));
+//Ejercicio 8
+let ejercicio8="En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+console.log(ejercicio7.replace("Mancha","Andalucía"));
+//Ejercicio9
+let ejercicio9= "Cebollas;Patatas;Pimientos;Tomates";
+console.log(ejercicio9.split(" "));
+//Ejercicio10
+let ejercicio10="En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+console.log(ejercicio10.startsWith("En"));
+console.log(ejercicio10.startsWith("lugar"));
+//Ejercicio11
+let ejercicio11="En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+console.log(ejercicio10.substr(5,7));
+console.log(ejercicio10.substring(5,11));
+//Ejercicio12
+let ejercicio12="  Javier Soldado  ";
+console.log(ejercicio12.trim())
+//Ejericicio13
+let ejercicio13= "JavaScript";
+console.log(ejercicio13.padEnd(5,"*"))
+console.log(ejercicio13.padStart(5,"#"))
+</script>
+
+</body>
+</html>

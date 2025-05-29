@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+		//1. Calcula el valor absoluto de los siguientes números: 3, -5, 8, -3.5, 12.2
+		console.log(`----------------- EJ1 ----------------------------`);
+		let ej1_array = [3, -5, 8, -3.5, 12.2];
+		let ej1_array_valores_absolutos = ej1_array.map((n) => Math.abs(n));
+		console.log(`Valores absolutos:${ej1_array_valores_absolutos.toString()}`);
+
+		//2. Muestra por la consola el valor de la constante PI definida en la clase Math. 
+		console.log(`----------------- EJ2 ----------------------------`);
+		console.log(`Constante PI:${Math.PI}`);
+	     
+        //3.Calcula el coseno de 30º. Haz el mismo cálculo usando la calculadora de Windows. 
+        //Compara ambos resultados y si no coinciden investiga el motivo y corrige tu código de JS. 
+       
+        console.log(`----------------- EJ3 ----------------------------`);
+        let ej3=30*Math.cos(Math.PI/6);
+        console.log(`Coseno de 30º: ${ej3}`);
+        //Calcula el seno de 45º en JS y con la calculadora y comprueba que coincidan. Calcula el coseno de /3 radianes 
+        //y comprueba con la calculadora que es correcto.
+        let ej3a=45*Math.cos(Math.PI/4);
+        console.log(`Coseno de 30º: ${ej3a}`);
+
+        //4.Calcula e3
+        console.log(`----------------- EJ4 ----------------------------`);
+        let ej4= Math.log(Math.exp(3));
+        console.log(`El logaritmo de e elevado a 3 es: ${ej4}`);
+        //5.Calcula  log 12.5 ( logaritmo en base 10). Calcula ln 15.7 (logaritmo neperiano). Compara ambos resultados con la calculadora.
+        console.log(`----------------- EJ5 ----------------------------`);
+        let ej5=Math.log10(12.5);
+        console.log(`El logaritmo en base 10 de 12.5 es: ${ej5}`);
+
+        let ej5a= Math.log(15.7);
+        console.log(`El logaritmo neperiano de 15.7 es: ${ej5a}`);
+
+        //6.Calcula la raíz cuadrada 128.12 comparando con la calculadora que el resultado es correcto.
+        console.log(`----------------- EJ6 ----------------------------`);
+        let ej6=Math.sqrt(128.12);
+        console.log(`La raíz cuadrada de 128.12: ${ej6}`);
+
+        //7.Redondea los siguientes números al entero más cercano: 2.7, -2.7, 12.4, 12.5, -0.6, 0.6
+        console.log(`----------------- EJ7 ----------------------------`);
+        let ej7_array = [2.7, -2.7, 12.4, 12.5, -0.6, 0.6];
+        let ej7_array_redondeado = ej7_array.map((n) => Math.round(n));
+		console.log(`Valores redondeados:${ej7_array_redondeado.toString()}`);
+        //8.Calcula el techo (ceil) de los siguientes números: 2.7, -2.7, 12.4, 12.5, -0.6, 0.6
+        console.log(`----------------- EJ8 ----------------------------`);
+        let ej8_array = [2.7, -2.7, 12.4, 12.5, -0.6, 0.6];
+        let ej8_array_redondeado = ej8_array.map((n) => Math.ceil(n));
+		console.log(`Valores redondeados hacia arriba:${ej8_array_redondeado.toString()}`);
+        //9.Calcula el suelo (floor) de los siguientes números: 2.7, -2.7, 12.4, 12.5, -0.6, 0.6
+        console.log(`----------------- EJ9 ----------------------------`);
+        let ej9_array = [2.7, -2.7, 12.4, 12.5, -0.6, 0.6];
+        let ej9_array_redondeado = ej9_array.map((n) => Math.floor(n));
+		console.log(`Valores redondeados hacia abajo:${ej9_array_redondeado.toString()}`);
+        //10.Calcula el menor de los valores de estos pares de números: (-8, 7), (12, 5), (-12, 5)
+        console.log(`----------------- EJ10 ----------------------------`);
+        let ej10_array = [[-8, 7], [12, 5], [-12, 5]];
+		let ej10_array_min = ej10_array.map((n,c) => Math.min(n,c));
+		console.log(`Valores mínimos:${ej10_array_min.toString()}`);
+        //11.Calcula el mayor de los valores de estos pares de números: (-8, 7), (12, 5), (-12, 5)
+        console.log(`----------------- EJ11 ----------------------------`);
+        let ej11a=Math.max(-8,7)
+        //12.Queremos simular el lanzamiento de un dado. Genera un número aleatorio entre 1 y 6.
+        console.log(`----------------- EJ12 ----------------------------`);
+        let ej12=Math.floor(Math.random() * 6) + 1;
+        console.log(`Número aleatorio entre 1 y 6: ${ej12}`);
+        //13.Genera un número aleatorio entre 26 y 79.
+        console.log(`----------------- EJ13 ----------------------------`);
+        let ej13 = (Math.random() * (79 - 26 + 1)) + 26;
+        console.log(`Número aleatorio entre 26 y 79: ${ej13}`)
+        //14.Redondea la constante Math.PI a dos decimales. Haz lo mismo pero redondeando a tres, cuatro y cinco decimales.
+        console.log(`----------------- EJ14 ----------------------------`);
+        let pi= Math.PI;
+        let ej142=pi.toFixed(2);
+        let ej143=pi.toFixed(3);
+        let ej144=pi.toFixed(4);
+        let ej145=pi.toFixed(5);
+
+        console.log(`Constante de PI: ${ej14}`)
+        console.log(`Constante de PI: ${ej142}`)
+        console.log(`Constante de PI: ${ej143}`)
+        console.log(`Constante de PI: ${ej144}`)
+        console.log(`Constante de PI: ${ej145}`)
+        
+
+            
+
+
+
+
+
+    </script>
+</body>
+</html>

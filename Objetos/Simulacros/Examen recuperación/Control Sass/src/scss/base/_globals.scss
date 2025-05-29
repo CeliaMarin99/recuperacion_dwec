@@ -1,0 +1,63 @@
+@use 'vars' as v;
+@use 'mixins' as m;
+@use 'sass:color';
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    @include m.box-sizing(border-box);
+}
+
+*, *::after, *::before {
+    @include m.box-sizing(inherit);
+}
+
+body {
+    font-family: v.$main-font;
+    font-size: 2rem;
+    margin: 0;
+}
+
+//textos
+p {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+}
+
+
+h1 {
+    font-size: 4.4rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+//Imágenes responsive
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.btn {
+    &:hover {
+        background-color: adjust-color(v.$Principal, $lightness: -15%);
+    }
+} 
+
+
+

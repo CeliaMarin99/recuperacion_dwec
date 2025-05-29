@@ -1,0 +1,46 @@
+@use '../base/vars' as v;
+@use '../base/mixins' as m;
+@use '../base/globals';
+
+.hero {
+    &__item{
+        width: 100%;
+        background-color: v.$Principal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        color: white;
+        text-align: center;
+        padding: 20px;
+        width: 70%;
+    }
+       
+ 
+}
+
+.hero {
+    &__item2{
+        width: 100%;
+        background-color: v.$Secundario;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        color: white;
+        text-align: center;
+        padding: 20px;
+        width: 70%;
+    }
+       
+ 
+}
+
+
+.hero__image {
+    width: 100%;
+}

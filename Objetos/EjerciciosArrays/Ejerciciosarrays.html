@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*1.Con los elementos: 'Plátanos', 'Naranjas', 'Pomelos', 'Fresas' y 'Limones' crea varios arrays usando las diferentes formas que permite JS.*/
+         let array1 =['Pátanos', 'Naranjas', 'Pomelos','Fresas','Limones'];
+         let array2= new Array(5);
+         array2[0]='Plátanos';
+        /*2.Calcula la suma de todos los elementos del siguiente array disperso: [5, 2, , 3, -2, 7, ,9]*/
+          let ej2 = [5, 2, 3, -2, 7, ,9];
+          let suma=0;
+          let contador=0;
+        for(let i=0; i < ej2.length; i++){
+          if(ej2[i] != undefined){
+          suma += ej2[i];
+          contador++;
+        }
+      }
+        /*3.A partir del array ['Huelva', 'Sevilla', 'Córdoba'] usando método push debes agregar al final del mismo los elementos 'Jaén' y 'Granada' 
+        (examina el array para comprobar que realmente lo contiene). Posteriormente usando método pop debes extraer el último elemento del array 
+        (examina el array para comprobar que realmente ese elemento ya no forma parte del mismo).*/
+
+           let ej3=['Huelva', 'Sevilla', 'Córdoba'];
+           ej3.push('Jaén','Granada');
+           ej3.includes('Jaén', 'Granada');
+           ej3.pop();
+           ej3.includes('Granada');
+           ej3.pop();
+           ej3.includes('Jaén');
+        /*4.A partir del array ['Huelva', 'Sevilla', 'Córdoba'] usando unshift debes añadir al principio del array el elemento 'Cádiz' (haz la comprobación oportuna). 
+        Posteriormente usando shift debes extraer el primer elemento del array.*/
+        ej3.unshift('Cádiz');
+        ej3.includes('Cádiz');
+        ej3.shift();
+
+        /*5.A partir del array ['Huelva', 'Sevilla', 'Córdoba'] y usando la instrucción delete debes eliminar el segundo elemento del array 
+        (posteriormente examina qué contiene el array en esa posición).*/
+
+        delete ej3[1];
+
+        /*6.A partir del array ['Huelva', 'Sevilla', 'Córdoba', 'Jaén', 'Almería', 'Granada', 'Málaga', 'Cádiz'] ordénalo en orden alfabético 
+        y examina el contenido. Posteriormente ordénalo en orden inverso (examina el contenido).*/
+
+        let ej6=['Huelva','Sevilla', 'Córdoba','Jaén','Almería','Granada','Málaga', 'Cádiz'];
+        ej6.sort();
+        ej6.reverse();
+
+        /*7. Crea el array ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas']. Usando el método splice debes eliminar el segundo elemento del array 
+        (comprueba que realmente se ha eliminado 'Naranjas'). Posteriormente y usando de nuevo splice debes insertar 'Limones' entre el elemento 'Plátanos' y 'Pomelos' 
+        (comprueba que realmente se ha insertado correctamente).*/
+        let ej7=['Plátanos', 'Naranjas', 'Pomelos', 'Fresas'];
+        
+       ej7.splice(1,1,'Naranjas');
+       ej7.splice(1,0,'Limones');
+        
+
+        /*8.Crea el array ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas']. Usando el método slice debes extraer el tercer elemento del array y mostrarlo por pantalla 
+        (comprueba si el elemento extraído se ha eliminado del array).*/
+        let ej8=['Plátanos','Naranjas','Pomelos','Fresas'];
+        console.log(ej8.slice(2,3));
+        console.log(ej2);
+
+        /*9.Concatena los arrays ['Plátanos', 'Naranjas', 'Pomelos'] y ['Cebollas', 'Pepinos', 'Pimientos'] en un solo array.*/
+        let ej9=['Plátanos','Naranjas','Pomelos'];
+        let ej9a=['Cebollas','Pepinos','Pimientos'];
+        miarray= ej9.concat(ej9a);
+        console.log(miarray);
+
+        /*10.Crear el array  ['Plátanos', 'Naranjas', 'Pomelos'] y recórrelo de cuatro maneras distintas de manera que se vaya volcando cada uno de los elementos a la 
+        consola de depuración.*/
+        let ej10=['Plátanos','Naranjas','Pomelos'];
+
+        //1ª Forma
+        for(let i=0; i<ej10.length;i++){
+         console.log(i + " "+ej10[i]);
+
+        }
+
+        //2ª Forma
+        for(let item of ej10){
+            console.log(item);
+        }
+
+        //3ª Forma
+        for(let index in ej10){
+            console.log(index + " "+ ej10[index]);
+        }
+
+        //4ª Forma
+        ej10.forEach(function(item,index){
+            console.log(index+ " "+item);
+        });
+
+        /*11.Crea el array ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas']. Usando el método indexOf busca en qué posición se encuentra el elemento 'Pomelos'. 
+        Intenta buscar el elemento 'Sandía' y comprueba qué devuelve el método indexOf*/
+        let ej11=['Plátanos', 'Naranjas','Pomelos','Fresas'];
+        let index=ej11.indexOf('Pomelos');
+        console.log(index);
+
+        console.log(ej11.indexOf('Sandía'));//Devuelve -1
+
+        /*12.Crea el array ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas']. Usando el método includes debes comprobar si el array contiene el elemento 'Naranjas'. 
+        Comprueba si contiene el elemento 'Peras'*/
+
+        let ej12=['Plátanos', 'Naranjas','Pomelos','Fresas'];
+        console.log(ej12.includes('Naranjas'));//true
+        console.log(ej12.includes('Peras'));//false
+
+
+        /*13.Crea el array [2, 12, 22, 30, 36]. Usando el método every debes comprobar si todos los elementos son pares. Crea un nuevo array [2, 12, 22, 7, 30, 36] y 
+        comprueba de nuevo usando every si todos los elementos son par.*/
+        let ej13= [2,12,22,30,36];
+
+        function par(num){
+           return(num%2)==0
+        }
+
+        console.log(ej13.every(par));
+
+        let ej13a=[2,12,22,7,30,36];
+
+        console.log(ej13a.every(par));
+
+        /*14.Crea el array [2, 9, 7, 5.4, 8]. Usando el método map debes crear un nuevo array que contenga el cuadrado de cada elemento y almacenarlo en un nuevo array.*/
+       let ej14=[2,9,7,5.4,8];
+       let newArray= ej14.map(num => Math.pow(num, 2));;
+       
+        /*15.Crea un nuevo array [2, 7, 22, 3, 30, 17]. Usando el método filter debes crear un nuevo array que contenga solo los elementos impares del array anterior.*/
+          let ej15=[2,7,22,3,30,17];
+          let newArray2=ej15.filter(impares);
+
+          function impares(num){
+              if ((num%2)!==0){
+                return num;
+              }
+          }
+        /*16.Crea un nuevo array [2, 12, 7, 22, 3, 30, 17]. Usando el método find debes devolver el primer elemento del array que sea un número impar.*/
+         let ej16=[2,12,7,22,3,30,17];
+          let newArray3= ej16.find(impares);
+
+        /*17.Crea el array ['Plátanos', 'Naranjas', 'Pomelos', 'Plátanos', 'Fresas']. Usando el método lastIndexOf debes encontrar la última posición en que se encuentre el elemento  
+        'Plátanos'*/
+         let ej17 =['Pálatos', 'Naranjas', 'Pomelos', 'Fresas'];
+         let newArray4 = ej17.lastIndexOf('Plátanos');
+    </script>
+</body>
+</html>

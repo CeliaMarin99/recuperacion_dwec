@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="procesa.php" method="post">
+        Nombre:
+        <input type="text" id="nombre" name="nombre" maxlength="30" required>
+        <br>
+
+        Sexo:
+        Hombre: <input type="radio" id="hombre" name="sexo" value="Hombre" required>
+        Mujer: <input type="radio" id="mujer" name="sexo" value="Mujer" required>
+        <br>
+
+        Nacimiento:
+        <input type="date" id="nacimiento" name="nacimiento" required>
+        <br>
+
+        Fumador: 
+        <input type="checkbox" id="fumador" name="fumador">
+        <br>
+
+        Cigarrillos por día:
+        <select id="cigarrilos" name="cigarrillos" required disabled>
+            <option value="">Seleccione una opción</option>
+            <option value="1-5">1-5</option>
+            <option value="6-10">6-10</option>
+            <option value="10+">10 o más</option>
+        </select>
+        <br>
+
+        <input type="submit" id="enviar" value="Enviar">
+        <input type="reset" id="borrar" value="Borrar">
+    </form>
+
+    <script>
+        window.addEventListener('load', iniciar);
+
+        function iniciar() {
+            document.getElementById('enviar').addEventListener('click', validar);
+            document.getElementById('fumador').addEventListener('change', habilitar);
+        }
+
+        function validar(e) {
+            esMayorEdad();      
+        }
+
+        function habilitar() {
+            const fumador = document.getElementById('fumador').checked;
+            const select = document.getElementById('cigarrilos');
+            select.disabled = !fumador;
+        }
+
+        function esMayorEdad() {
+            const fechaStr = document.getElementById('nacimiento').value;
+            if (!fechaStr) return false;
+
+            const nacimiento = new Date(fechaStr);
+            const hoy = new Date();
+            let edad = hoy.getFullYear() - nacimiento.getFullYear();
+            const m = hoy.getMonth() - nacimiento.getMonth();
+
+            if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
+                edad--;
+            }
+
+            if (edad < 18) {
+                document.getElementById('nacimiento').setCustomValidity("Debe ser mayor de edad.");
+                return false;
+            } else {
+                document.getElementById('nacimiento').setCustomValidity("");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

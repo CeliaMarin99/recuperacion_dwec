@@ -1,0 +1,37 @@
+@use '../base/vars' as v;
+@use '../base/mixins' as m;
+@use '../base/globals';
+
+.quieres {
+    margin-top: 30px;
+    background-image: url(../../../img/chef_bg.jpg);
+    background-position: none;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        color: v.$Blanco;
+    }
+
+    
+    &__boton {
+        background-color: v.$Principal;
+        color: v.$Blanco;
+        font-size: bold;
+        padding: 15px;
+        width: 200px;
+        margin: 0 auto;
+        border: none;
+    }
+}

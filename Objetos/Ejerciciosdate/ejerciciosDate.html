@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//1. Crea un objeto Date que contenga la fecha actual y guárdalo en una variable. Vuelca el contenido a la consola. Vuelca también a la consola el año, el mes (en formato numérico), el día(en formato numérico), el día de la semana (en formato numérico), la hora, los minutos y los segundos. Fíjate en el valor devuelto por el mes y deduce qué número asigna JavaScript al mes Enero.
+console.log(`----------------- EJ1 ----------------------------`);
+let ej1_fecha = new Date();
+console.log(`fecha actual:${ej1_fecha}`);
+let ej1_año = ej1_fecha.getFullYear();
+let ej1_mes = ej1_fecha.getMonth();
+let ej1_dia = ej1_fecha.getDate();
+let ej1_dia_semana = ej1_fecha.getDay();
+let ej1_hora = ej1_fecha.getHours();
+let ej1_minutos = ej1_fecha.getMinutes();
+let ej1_segundos = ej1_fecha.getSeconds();
+console.log(`Año:${ej1_año}, Mes:${ej1_mes}, Dia:${ej1_dia}, Dia semana:${ej1_dia_semana}, Hora:${ej1_hora}, Minutos:${ej1_minutos}, Segundos:${ej1_segundos}`);
+
+//2.Crea un objeto Date que contenga la fecha de tu nacimiento. Muestra dicha fecha por consola.
+//Si el mes no aparece correctamente busca en la documentación qué número
+//de mes asigna JavaScript a Enero y corrige el problema.
+console.log(`----------------- EJ2 ----------------------------`);
+let ej2 = new Date(1999,4,11);
+console.log(`fecha de nacimiento:${ej2}`);
+
+//3.
+console.log(`----------------- EJ3 ----------------------------`);
+       
+
+
+
+
+//4.Los objetos Date tienen un método llamado getDay que devuelve el día de la semana 
+// en formato numérico. Crea una función a la cual le pases como argumento ese número y devuelva 
+//un string con el día de la semana (‘Lunes’, ‘Martes’, …, ‘Domingo’)
+        console.log(`----------------- EJ4 ----------------------------`);
+    function obtenerDia(numero){
+        let ej4_array = ['Lunes', 'Martes','Miércoles','Jueves', 'Viernes','Sábado','Domingo'];
+        let diaNumero = fecha.getDay();
+        return ej4_array[diaNumero]
+    }
+  console.log(obtenerDia(1));
+
+//5.Muestra por la consola el número de milisegundos que han transcurrido desde el 1 de enero de 1970 
+//hasta el momento actual.
+let fechaHoy = new Date(2024,9,9,17,6,15);
+fechaHoy.getTime();
+
+/*6.Usando la página web https://www.epochconverter.com/ averigua el número de milisegundos transcurridos desde el 1/1/1970 hasta 
+la fecha de tu nacimiento. Crea un objeto Date usando como argumento los milisegundos averiguados anteriormente. Vuelca el contenido del 
+objeto fecha a la consola y comprueba que esa fecha es correcta.
+*/
+
+//8.
+// Crear un objeto Date para la fecha actual
+let fechaActual = new Date();
+
+// Obtener la hora local
+let horasLocales = fechaActual.getHours();
+
+// Obtener la hora UTC
+let horasUTC = fechaActual.getUTCHours();
+
+// Calcular la diferencia entre horas locales y horas UTC
+let diferencia = horasLocales - horasUTC;
+
+// Mostrar los resultados en la consola
+console.log(`Hora local: ${horasLocales}`);
+console.log(`Hora UTC: ${horasUTC}`);
+console.log(`Diferencia: ${diferencia} horas`);
+
+//9.
+// Crear un objeto Date para el 28 de febrero de 2021
+let fecha2021 = new Date(2021, 1, 28); 
+
+// Obtener el día posterior
+fecha2021.setDate(fecha2021.getDate() + 1); // Sumar un día
+console.log(`El día posterior a 28/02/2021 es: ${fecha2021.toLocaleDateString()}`); // Mostrar la fecha en formato legible
+
+// Crear un objeto Date para el 28 de febrero de 2020
+const fecha2020 = new Date(2020, 1, 28); // Febrero de 2020
+// Obtener el día posterior
+fecha2020.setDate(fecha2020.getDate() + 1); // Sumar un día
+console.log(`El día posterior a 28/02/2020 es: ${fecha2020.toLocaleDateString()}`); // Mostrar la fecha en formato legible
+
+//10
+// Crear un objeto Date para el 35 de enero de 2021
+let fechaInvalida = new Date(2021, 0, 35); // Enero es el mes 0 en JavaScript
+
+// Mostrar la fecha almacenada
+console.log(`La fecha almacenada es: ${fechaInvalida.toLocaleDateString()}`);
+    </script>
+</body>
+</html>

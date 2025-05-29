@@ -1,0 +1,50 @@
+@use '../base/vars' as v;
+@use '../base/mixins' as m;
+@use '../base/globals';
+
+.footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: v.$big;
+    margin: 0 auto;
+    padding: 20px;
+
+    
+    @include m.desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+   
+    &__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 10px;
+        color: v.$Negro;
+
+        
+    @include m.desktop {
+        flex-direction: row;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+       
+    }
+
+    &__item {
+        margin-bottom: 10px;
+
+        @include m.desktop {
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+    }
+
+  
+}
